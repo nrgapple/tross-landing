@@ -35,6 +35,17 @@ export default async function handler(req, res) {
           secure: true,
         })
 
+        await new Promise((resolve, reject) => {
+          // verify connection configuration
+          transporter.verify(function (error, success) {
+            if (error) {
+              reject(error)
+            } else {
+              resolve(success)
+            }
+          })
+        })
+
         await new Promise((res, rej) =>
           transporter.sendMail(
             {
