@@ -36,7 +36,6 @@ export default async function handler(req, res) {
             user: process.env.GMAIL_USER,
             pass: process.env.GMAIL_PW,
           },
-          secure: true,
         })
 
         await new Promise((resolve, reject) => {
