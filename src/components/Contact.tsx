@@ -10,29 +10,54 @@ import {
   useToast,
   VStack,
 } from '@chakra-ui/react'
-import { Field, Form, Formik, FormikHelpers } from 'formik'
+import { Field, FieldProps, Form, Formik, FormikHelpers } from 'formik'
+import { useRef } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
 import { object, string, InferType } from 'yup'
 
 export const Contact = () => {
+  const recaptchaRef = useRef<ReCAPTCHA>()
+  const { current: recaptcha } = recaptchaRef || {}
   const toast = useToast()
   const onSubmit = async (
     values: ContactForm,
-    { resetForm }: FormikHelpers<ContactForm>
+    { resetForm, setFieldValue }: FormikHelpers<ContactForm>
   ) => {
     try {
       console.log({ values })
-      resetForm()
-      toast({
-        title: 'Your Message has been sent',
-        status: 'success',
-        duration: 2000,
+      const { name, email, msg, code } = values
+      const response = await fetch('/api/captcha', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: msg,
+          captcha: code,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
+      if (response.ok) {
+        toast({
+          title: 'Your Message has been sent',
+          status: 'success',
+          duration: 2000,
+        })
+      } else {
+        const error = await response.json()
+        throw new Error(error.message)
+      }
+      resetForm()
     } catch (err) {
       toast({
         title: 'There was an error sending your message',
         status: 'error',
         duration: 2000,
       })
+      setFieldValue('code', '')
+    } finally {
+      recaptcha?.reset()
     }
   }
 
@@ -56,7 +81,7 @@ export const Contact = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.name && form.touched.name}>
-                    <FormLabel htmlFor='name'>First Name</FormLabel>
+                    <FormLabel htmlFor='name'>Name/ Company</FormLabel>
                     <Input {...field} id='name' placeholder='John' />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
@@ -77,6 +102,7 @@ export const Contact = () => {
                 )}
               </Field>
             </HStack>
+
             <Field name='msg'>
               {({ field, form }) => (
                 <FormControl isInvalid={form.errors.msg && form.touched.msg}>
@@ -87,6 +113,25 @@ export const Contact = () => {
                     placeholder='How can we help you?'
                   />
                   <FormErrorMessage>{form.errors.msg}</FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
+            <Field name='code'>
+              {({ field, form }: FieldProps<string>) => (
+                <FormControl
+                  isInvalid={!!form.errors.code && !!form.touched.code}>
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    size='normal'
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                    onChange={c => {
+                      if (!c) {
+                        return
+                      }
+                      form.setFieldValue('code', c)
+                    }}
+                  />
+                  <FormErrorMessage>{form.errors.code}</FormErrorMessage>
                 </FormControl>
               )}
             </Field>
@@ -101,9 +146,10 @@ export const Contact = () => {
 }
 
 export const contactSchema = object({
-  name: string().required('This is a required'),
+  name: string().optional(),
   email: string().email('Invalid email').required('This is a required'),
   msg: string().required('This is a required'),
+  code: string().required('This is a required'),
 })
 
 export type ContactForm = InferType<typeof contactSchema>
