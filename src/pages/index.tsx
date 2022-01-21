@@ -7,31 +7,35 @@ import { Portfolio } from '../components/Portfolio'
 import { StackStuff } from '../components/StackStuff'
 import { Hero } from '../components/Hero'
 import { ContactSection } from '../components/ContactSection'
+import { useRouter } from 'next/router'
 
-const Index = () => (
-  <Container>
-    <Main>
-      <Nav />
-      <section>
-        <Hero />
-      </section>
-      <section>
-        <StackStuff />
-      </section>
-      <section>
-        <TeamBlock />
-      </section>
-      <section>
-        <Portfolio />
-      </section>
-      <section>
-        <ContactSection />
-      </section>
-      <Footer>
-        Copyright © {new Date().getFullYear()} Tross, LLC. All rights reserved.
-      </Footer>
-    </Main>
-  </Container>
-)
+const Index = () => {
+  return (
+    <Container>
+      <Main>
+        <Nav />
+        <section>
+          <Hero />
+        </section>
+        <section>
+          <StackStuff />
+        </section>
+        <section>
+          <TeamBlock />
+        </section>
+        <section>
+          <Portfolio />
+        </section>
+        <section id='contact'>
+          <ContactSection />
+        </section>
+        <Footer>
+          Copyright © {new Date().getFullYear()} Tross, LLC. All rights
+          reserved.
+        </Footer>
+      </Main>
+    </Container>
+  )
+}
 
 export default Index

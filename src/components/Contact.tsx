@@ -68,6 +68,7 @@ export const Contact = () => {
           name: '',
           email: '',
           msg: '',
+          code: '',
         } as ContactForm
       }
       onSubmit={onSubmit}
@@ -135,7 +136,18 @@ export const Contact = () => {
                 </FormControl>
               )}
             </Field>
-            <Button mt={4} isLoading={isSubmitting} type='submit'>
+            <Button
+              variant='solid'
+              shadow='lg-600'
+              _hover={{ shadow: 'dark-lg-600' }}
+              _active={{
+                color: 'gray.500',
+                bg: 'brand.600',
+              }}
+              bg='brand.100'
+              mt={4}
+              isLoading={isSubmitting}
+              type='submit'>
               Submit
             </Button>
           </VStack>
@@ -147,9 +159,9 @@ export const Contact = () => {
 
 export const contactSchema = object({
   name: string().optional(),
-  email: string().email('Invalid email').required('This is a required'),
-  msg: string().required('This is a required'),
-  code: string().required('This is a required'),
+  email: string().email('Invalid email').required('This is required'),
+  msg: string().required('This is required'),
+  code: string().required('This is required'),
 })
 
 export type ContactForm = InferType<typeof contactSchema>
