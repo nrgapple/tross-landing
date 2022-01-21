@@ -24,6 +24,10 @@ export default async function handler(req, res) {
       )
       const captchaValidation = await response.json()
       if (captchaValidation.success) {
+        console.log({
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PW,
+        })
         console.log('Captcha success')
         const transporter = nodemailer.createTransport({
           port: 465,
