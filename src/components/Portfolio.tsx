@@ -1,4 +1,5 @@
 import { VStack, Heading, Text, Image, Flex } from '@chakra-ui/react'
+import WithSpeechBubbles from './Bubbles'
 
 export const Portfolio = () => {
   return (
@@ -9,6 +10,7 @@ export const Portfolio = () => {
           Referican is a trusted partner
         </Text>
         <Image rounded='lg' src='/images/referican.jpeg' shadow='dark-lg' />
+        <WithSpeechBubbles />
       </VStack>
     </Flex>
   )
