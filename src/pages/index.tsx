@@ -6,6 +6,7 @@ import { Nav } from '../components/Nav'
 import { Portfolio } from '../components/Portfolio'
 import { StackStuff } from '../components/StackStuff'
 import { Hero } from '../components/Hero'
+import { ContactSection } from '../components/ContactSection'
 
 const Index = () => (
   <Container>
@@ -22,6 +23,9 @@ const Index = () => (
       </section>
       <section>
         <Portfolio />
+      </section>
+      <section>
+        <ContactSection />
       </section>
       <Footer>
         Copyright © {new Date().getFullYear()} Tross, LLC. All rights reserved.

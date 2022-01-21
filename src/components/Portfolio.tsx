@@ -3,7 +3,7 @@ import WithSpeechBubbles from './Bubbles'
 
 export const Portfolio = () => {
   return (
-    <Flex w='100%' justify='center'>
+    <Flex w='full' justify='center'>
       <VStack maxW='60rem' px='1rem'>
         <Heading>Trusted Partners</Heading>
         <Text fontSize='lg' color='gray.600' pb='10'>
