@@ -1,6 +1,8 @@
+import nodemailer from 'nodemailer'
+
 export default async function handler(req, res) {
   const { body, method } = req
-  const { email, message, captcha } = body
+  const { name, email, message, captcha } = body
 
   if (method === 'POST') {
     if (!email || !captcha || !message) {
@@ -23,6 +25,31 @@ export default async function handler(req, res) {
       const captchaValidation = await response.json()
       if (captchaValidation.success) {
         console.log('Captcha success')
+        const transporter = nodemailer.createTransport({
+          port: 465,
+          host: 'smtp.gmail.com',
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PW,
+          },
+          secure: true,
+        })
+
+        await new Promise((res, rej) =>
+          transporter.sendMail(
+            {
+              to: process.env.GMAIL_USER,
+              from: process.env.GMAIL_USER,
+              subject: `Contacting Tross from ${name || email}`,
+              text: `Email: ${email}\n${message}`,
+            },
+            function (err, info) {
+              if (err) rej(err)
+              else res(null)
+            }
+          )
+        )
+
         // await sendEmail({
         //   name: 'Tross',
         //   email: 'engineering@referican.com',
