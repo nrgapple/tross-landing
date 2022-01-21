@@ -7,14 +7,33 @@ import {
   HStack,
   Input,
   Textarea,
+  useToast,
   VStack,
 } from '@chakra-ui/react'
-import { Field, Form, Formik } from 'formik'
+import { Field, Form, Formik, FormikHelpers } from 'formik'
 import { object, string, InferType } from 'yup'
 
 export const Contact = () => {
-  const onSubmit = async (values: ContactForm) => {
-    console.log({ values })
+  const toast = useToast()
+  const onSubmit = async (
+    values: ContactForm,
+    { resetForm }: FormikHelpers<ContactForm>
+  ) => {
+    try {
+      console.log({ values })
+      resetForm()
+      toast({
+        title: 'Your Message has been sent',
+        status: 'success',
+        duration: 2000,
+      })
+    } catch (err) {
+      toast({
+        title: 'There was an error sending your message',
+        status: 'error',
+        duration: 2000,
+      })
+    }
   }
 
   return (
@@ -37,7 +56,7 @@ export const Contact = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.name && form.touched.name}>
-                    <FormLabel htmlFor='name'>First name</FormLabel>
+                    <FormLabel htmlFor='name'>First Name</FormLabel>
                     <Input {...field} id='name' placeholder='John' />
                     <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
