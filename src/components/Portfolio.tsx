@@ -1,13 +1,15 @@
-import { VStack, Heading, Text, Image } from '@chakra-ui/react'
+import { VStack, Heading, Text, Image, Flex } from '@chakra-ui/react'
 
 export const Portfolio = () => {
   return (
-    <VStack>
-      <Heading>Trusted Partners</Heading>
-      <Text color='gray.400' pb='10'>
-        Referican is a trusted partner
-      </Text>
-      <Image rounded='lg' src='/images/referican.jpeg' shadow='dark-lg' />
-    </VStack>
+    <Flex w='100%' justify='center'>
+      <VStack maxW='60rem' px='1rem'>
+        <Heading>Trusted Partners</Heading>
+        <Text fontSize='lg' color='gray.600' pb='10'>
+          Referican is a trusted partner
+        </Text>
+        <Image rounded='lg' src='/images/referican.jpeg' shadow='dark-lg' />
+      </VStack>
+    </Flex>
   )
 }

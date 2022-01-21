@@ -21,8 +21,13 @@ export const TeamBlock = ({ title }: { title: string }) => {
     variableWidth: true,
   }
   return (
-    <Box spacing={5}>
-      <Heading>{title}</Heading>
+    <Box
+      spacing={5}
+      background='gray.100'
+      borderTop='gray.500'
+      borderWidth='1px'
+      borderBottom='gray.500'>
+      <Heading pt='5rem'>{title}</Heading>
       <Box pt={5}>
         <Slider {...settings} rtl={true}>
           <CarouselText>{'Devops'}</CarouselText>
@@ -31,7 +36,7 @@ export const TeamBlock = ({ title }: { title: string }) => {
           <CarouselText>{'Tech Leads'}</CarouselText>
         </Slider>
       </Box>
-      <Box>
+      <Box pb='5rem'>
         <Slider {...settings}>
           <CarouselText isCheck>{'Easily Maintainable'}</CarouselText>
           <CarouselText isCheck>{'Low hosting costs'}</CarouselText>
