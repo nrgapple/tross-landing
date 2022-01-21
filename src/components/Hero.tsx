@@ -1,4 +1,5 @@
-import { Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import { Button, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import Link from 'next/link'
 
 export const Hero = () => (
   <Flex w='full' justify='center'>
@@ -34,6 +35,20 @@ export const Hero = () => (
         quickly be launched and hosted, with modern technical stacks, we see
         web-apps moving in that direction.
       </Text>
+      <Link href={'/#contact'} passHref>
+        <Button
+          variant='solid'
+          shadow='lg-600'
+          _hover={{ shadow: 'dark-lg-600' }}
+          _active={{
+            color: 'gray.500',
+            bg: 'brand.600',
+          }}
+          bg='brand.100'
+          as='a'>
+          Chat with us
+        </Button>
+      </Link>
     </VStack>
   </Flex>
 )
