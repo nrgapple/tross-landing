@@ -30,12 +30,13 @@ export default async function handler(req, res) {
         })
         console.log('Captcha success')
         const transporter = nodemailer.createTransport({
-          port: 587,
+          port: 465,
           host: 'smtp.gmail.com',
           auth: {
             user: process.env.GMAIL_USER,
             pass: process.env.GMAIL_PW,
           },
+          secure: true,
         })
 
         await new Promise((resolve, reject) => {
