@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         description='Apps Built Today'
         openGraph={{
           site_name: 'Tross',
+          type: 'website',
           url: 'https://www.tross.app',
           title: 'Tross - Pluggable Engineers',
           description: 'Apps Built Today',
