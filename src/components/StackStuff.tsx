@@ -87,7 +87,7 @@ export const StackStuff = ({ subheading }: { subheading?: string }) => {
       <Box py={12} maxW='60rem' px='1rem' w='full'>
         <VStack spacing={2} textAlign='center'>
           <HStack>
-            <Heading as='h1' fontSize='4xl'>
+            <Heading as='h1' fontSize={{ base: '3xl', md: '4xl' }}>
               The Tross® Engine
             </Heading>
             <Image

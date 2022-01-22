@@ -4,7 +4,10 @@ import Link from 'next/link'
 export const Hero = () => (
   <Flex w='full' justify='center'>
     <VStack maxW='60rem' px='1rem'>
-      <Heading as='h1' fontSize='8xl' fontWeight='extrabold'>
+      <Heading
+        as='h1'
+        fontSize={{ base: '5xl', lg: '8xl' }}
+        fontWeight='extrabold'>
         Build Maintainable Apps{' '}
         <Text
           as={'span'}

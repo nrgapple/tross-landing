@@ -24,7 +24,6 @@ export const Contact = () => {
     { resetForm, setFieldValue }: FormikHelpers<ContactForm>
   ) => {
     try {
-      console.log({ values })
       const { name, email, msg, code } = values
       const response = await fetch('/api/captcha', {
         method: 'POST',
@@ -76,7 +75,9 @@ export const Contact = () => {
       {({ isSubmitting, values }) => (
         <Form>
           <VStack spacing={5}>
-            <Heading>Get in Contact with Us</Heading>
+            <Heading fontSize={{ base: '3xl', md: '4xl' }}>
+              Get in Contact with Us
+            </Heading>
             <HStack>
               <Field name='name'>
                 {({ field, form }) => (

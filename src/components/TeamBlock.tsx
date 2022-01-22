@@ -27,7 +27,9 @@ export const TeamBlock = ({ title }: { title: string }) => {
       borderTop='gray.500'
       borderWidth='1px'
       borderBottom='gray.500'>
-      <Heading pt='5rem'>{title}</Heading>
+      <Heading pt='5rem' fontSize={{ base: '3xl', md: '4xl' }}>
+        {title}
+      </Heading>
       <Box pt={5}>
         <Slider {...settings} rtl={true}>
           <CarouselText>{'Devops'}</CarouselText>

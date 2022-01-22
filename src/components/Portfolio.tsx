@@ -5,7 +5,9 @@ export const Portfolio = () => {
   return (
     <Flex w='full' justify='center'>
       <VStack maxW='60rem' px='1rem'>
-        <Heading>Trusted Partners</Heading>
+        <Heading fontSize={{ base: '3xl', md: '4xl' }}>
+          Trusted Partners
+        </Heading>
         <Text fontSize='lg' color='gray.600' pb='10'>
           Referican is a trusted partner
         </Text>
