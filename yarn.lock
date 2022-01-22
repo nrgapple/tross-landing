@@ -1510,13 +1510,6 @@ react-remove-scroll@2.4.1:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
-react-scroll-hooks@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-scroll-hooks/-/react-scroll-hooks-0.1.1.tgz#fbfb53be671baf9a5509b7a5bfede8c2575c100e"
-  integrity sha512-8YcS5aiwFYCzy4TCtfX0erBbeK4iF1h+7YTAM5l6hp7vLjWJWEDLl//qn0pU+glk4QYXc+CYdw6DyHjvTN2Bsg==
-  dependencies:
-    warning "^4.0.3"
-
 react-slick@^0.28.1:
   version "0.28.1"
   resolved "https://registry.npmjs.org/react-slick/-/react-slick-0.28.1.tgz"
