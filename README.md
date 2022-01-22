@@ -2,7 +2,7 @@
 
 This is the main page for Tross LLC
 
-![tross-bridge-black](https://user-images.githubusercontent.com/10817537/150620018-4c4e1342-7c23-428a-901d-dcd7b9f2104c.png)
+![tross-bridge-black](https://user-images.githubusercontent.com/10817537/150622627-9a5a7633-b792-4782-b38d-7e62ac99db95.png)
 
 ## Created By
 
