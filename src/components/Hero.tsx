@@ -4,17 +4,11 @@ import Link from 'next/link'
 export const Hero = () => (
   <Flex w='full' justify='center'>
     <VStack maxW='60rem' px='1rem'>
-      <Heading
-        as='h1'
-        fontSize='8xl'
-        fontWeight='extrabold'
-        bgClip='text'
-        bgGradient='linear(to-l, brand.900, brand.400, brand.100)'>
+      <Heading as='h1' fontSize='8xl' fontWeight='extrabold'>
         Build Maintainable Apps{' '}
         <Text
           as={'span'}
           position='relative'
-          color='brand.600'
           _after={{
             content: "''",
             width: 'full',
