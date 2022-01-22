@@ -50,7 +50,7 @@ const CarouselText = ({
   isCheck?: boolean
 }) => {
   return (
-    <HStack w='auto' px='12px' spacing='3'>
+    <HStack w='auto' px='2' spacing='3'>
       {isCheck ? (
         <CheckIcon color='green.300' />
       ) : (
@@ -61,7 +61,8 @@ const CarouselText = ({
         color='gray.400'
         whiteSpace={'nowrap'}
         fontWeight='bolder'
-        fontSize='3xl'>
+        fontSize='3xl'
+        cursor={'default'}>
         {children}
       </Text>
     </HStack>
