@@ -5,7 +5,7 @@ import { TrossLogo } from './TrossLogo'
 export const Nav = () => {
   const color1 = theme.colors.brand[600]
   const color2 = theme.colors.brand[100]
-  const color3 = theme.colors.brand[400]
+
   const logoColor = keyframes`
     0%, 100%{
       color: ${color1};
@@ -14,6 +14,7 @@ export const Nav = () => {
       color: ${color2};
     }
   `
+
   return (
     <Flex w='full' justify='center'>
       <HStack

@@ -9,6 +9,7 @@ import {
   Flex,
   Image,
   HStack,
+  keyframes,
 } from '@chakra-ui/react'
 
 /**
@@ -72,14 +73,30 @@ StackWrapper.defaultProps = {
   title: 'SEO Optimized Frontend',
 }
 
+const engineMove = keyframes`
+    0%, 100%{
+      transform: translateY(1px);
+    }
+    50% {
+      transform: translateY(-1px);
+    }
+  `
+
 export const StackStuff = ({ subheading }: { subheading?: string }) => {
   return (
     <Flex justify='center' w='full'>
       <Box py={12} maxW='60rem' px='1rem' w='full'>
         <VStack spacing={2} textAlign='center'>
-          <Heading as='h1' fontSize='4xl'>
-            The <strong>Tross®</strong> Engine
-          </Heading>
+          <HStack>
+            <Heading as='h1' fontSize='4xl'>
+              The Tross® Engine
+            </Heading>
+            <Image
+              animation={`${engineMove} infinite .3s ease`}
+              h='50px'
+              src='/images/car-engine.png'
+            />
+          </HStack>
           <Text fontSize='lg' color={'gray.600'}>
             {subheading}
           </Text>
