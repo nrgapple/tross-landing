@@ -29,8 +29,8 @@ export const Nav = () => {
           <TrossLogo
             color={color1}
             animation={`${logoColor} infinite 5s linear`}
-            w='100px'
-            h='100px'
+            w={{ base: '70px', sm: '100px' }}
+            h={{ base: '70px', sm: '100px' }}
             viewBox='0 0 500 500'
           />
           <Heading color='brand.600'>

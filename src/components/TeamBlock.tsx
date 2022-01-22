@@ -1,25 +1,9 @@
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { Box, Text, HStack, Heading } from '@chakra-ui/react'
 import { ReactNode } from 'react'
-import Slider, { Settings } from 'react-slick'
+import Ticker from 'react-ticker'
 
 export const TeamBlock = ({ title }: { title: string }) => {
-  const settings: Settings = {
-    infinite: true,
-    autoplay: true,
-    cssEase: 'linear',
-    autoplaySpeed: 1,
-    speed: 9000,
-    slidesToShow: 3,
-    touchMove: false,
-    slidesToScroll: 1,
-    swipe: false,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    pauseOnDotsHover: false,
-    arrows: false,
-    variableWidth: true,
-  }
   return (
     <Box
       spacing={5}
@@ -27,24 +11,32 @@ export const TeamBlock = ({ title }: { title: string }) => {
       borderTop='gray.500'
       borderWidth='1px'
       borderBottom='gray.500'>
-      <Heading pt='5rem' fontSize={{ base: '3xl', md: '4xl' }}>
+      <Heading pt='2rem' fontSize={{ base: '3xl', md: '4xl' }}>
         {title}
       </Heading>
-      <Box pt={5}>
-        <Slider {...settings} rtl={true}>
-          <CarouselText>{'Devops'}</CarouselText>
-          <CarouselText>{'Specialized Engineers (FE & BE)'}</CarouselText>
-          <CarouselText>{'Project Managers'}</CarouselText>
-          <CarouselText>{'Tech Leads'}</CarouselText>
-        </Slider>
+      <Box pt={9}>
+        <Ticker speed={4}>
+          {({ index }) => (
+            <HStack>
+              <CarouselText>{'Devops'}</CarouselText>
+              <CarouselText>{'Specialized Engineers (FE & BE)'}</CarouselText>
+              <CarouselText>{'Project Managers'}</CarouselText>
+              <CarouselText>{'Tech Leads'}</CarouselText>
+            </HStack>
+          )}
+        </Ticker>
       </Box>
-      <Box pb='5rem'>
-        <Slider {...settings}>
-          <CarouselText isCheck>{'Easily Maintainable'}</CarouselText>
-          <CarouselText isCheck>{'Low hosting costs'}</CarouselText>
-          <CarouselText isCheck>{'High quality'}</CarouselText>
-          <CarouselText isCheck>{'Speedy Development'}</CarouselText>
-        </Slider>
+      <Box py='2rem'>
+        <Ticker speed={2}>
+          {({ index }) => (
+            <HStack>
+              <CarouselText isCheck>{'Easily Maintainable'}</CarouselText>
+              <CarouselText isCheck>{'Low hosting costs'}</CarouselText>
+              <CarouselText isCheck>{'High quality'}</CarouselText>
+              <CarouselText isCheck>{'Speedy Development'}</CarouselText>
+            </HStack>
+          )}
+        </Ticker>
       </Box>
     </Box>
   )
@@ -58,7 +50,7 @@ const CarouselText = ({
   isCheck?: boolean
 }) => {
   return (
-    <HStack px='12px' spacing='3'>
+    <HStack w='auto' px='12px' spacing='3'>
       {isCheck ? (
         <CheckIcon color='green.300' />
       ) : (
@@ -67,8 +59,9 @@ const CarouselText = ({
       <Text
         _hover={{ color: 'black' }}
         color='gray.400'
+        whiteSpace={'nowrap'}
         fontWeight='bolder'
-        fontSize='2xl'>
+        fontSize='3xl'>
         {children}
       </Text>
     </HStack>

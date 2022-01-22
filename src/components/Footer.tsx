@@ -13,7 +13,7 @@ export const Footer = (props: FlexProps) => (
       px='1rem'
       justify='center'
       as='footer'
-      py='8rem'
+      py='3rem'
       {...props}
     />
   </Flex>
