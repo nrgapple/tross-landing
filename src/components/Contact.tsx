@@ -73,7 +73,7 @@ export const Contact = () => {
       }
       onSubmit={onSubmit}
       validationSchema={contactSchema}>
-      {({ isSubmitting }) => (
+      {({ isSubmitting, values }) => (
         <Form>
           <VStack spacing={5}>
             <Heading>Get in Contact with Us</Heading>
@@ -117,25 +117,27 @@ export const Contact = () => {
                 </FormControl>
               )}
             </Field>
-            <Field name='code'>
-              {({ field, form }: FieldProps<string>) => (
-                <FormControl
-                  isInvalid={!!form.errors.code && !!form.touched.code}>
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    size='normal'
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                    onChange={c => {
-                      if (!c) {
-                        return
-                      }
-                      form.setFieldValue('code', c)
-                    }}
-                  />
-                  <FormErrorMessage>{form.errors.code}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
+            {values.email && (
+              <Field name='code'>
+                {({ form }: FieldProps<string>) => (
+                  <FormControl
+                    isInvalid={!!form.errors.code && !!form.touched.code}>
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      size='normal'
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                      onChange={c => {
+                        if (!c) {
+                          return
+                        }
+                        form.setFieldValue('code', c)
+                      }}
+                    />
+                    <FormErrorMessage>{form.errors.code}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+            )}
             <Button
               variant='solid'
               shadow='lg-600'

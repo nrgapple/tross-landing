@@ -1,7 +1,6 @@
 import { ReactElement, ReactNode } from 'react'
 import {
   Box,
-  Stack,
   Heading,
   Text,
   VStack,
