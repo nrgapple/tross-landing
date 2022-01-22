@@ -13,7 +13,7 @@ export default class Document extends NextDocument {
           />
           <meta
             property='og:image'
-            content={`https://tross-og-image.vercel.app/**Tross**%20-%20Pluggable%20Engineers.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fuser-images.githubusercontent.com%2F10817537%2F150620018-4c4e1342-7c23-428a-901d-dcd7b9f2104c.png&widths=350&heights=350`}
+            content={`https://tross-og-image.vercel.app/**Tross**%20-%20Pluggable%20Engineers.png?theme=light&md=1&fontSize=80px&images=https%3A%2F%2Fuser-images.githubusercontent.com%2F10817537%2F150622627-9a5a7633-b792-4782-b38d-7e62ac99db95.png&widths=1000&heights=600`}
           />
         </Head>
         <body>
