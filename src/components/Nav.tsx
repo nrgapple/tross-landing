@@ -1,14 +1,4 @@
-import {
-  Flex,
-  Heading,
-  HStack,
-  Text,
-  Image,
-  Box,
-  Icon,
-  keyframes,
-} from '@chakra-ui/react'
-import { hexToCSSFilter } from '../lib/hex-css'
+import { Flex, Heading, HStack, Text, keyframes } from '@chakra-ui/react'
 import theme from '../theme'
 import { TrossLogo } from './TrossLogo'
 
