@@ -15,7 +15,7 @@ import {
  * Thanks to https://worldvectorlogo.com/ for the svg logos.
  */
 
-export function StackWrapper({
+function StackWrapper({
   title,
   children,
 }: {
@@ -45,27 +45,25 @@ export function StackWrapper({
   )
 }
 
-export const StackItem = ({
+const StackItem = ({
   children,
   icon,
 }: {
   children: ReactNode
-  icon?: ReactElement
+  icon: ReactElement
 }) => (
   <VStack w='full'>
-    {icon && (
-      <Flex
-        w={16}
-        h={16}
-        align={'center'}
-        justify={'center'}
-        color={'white'}
-        rounded={'full'}
-        bg={'gray.100'}
-        mb={1}>
-        {icon}
-      </Flex>
-    )}
+    <Flex
+      w={16}
+      h={16}
+      align={'center'}
+      justify={'center'}
+      color={'white'}
+      rounded={'full'}
+      bg={'gray.100'}
+      mb={1}>
+      {icon}
+    </Flex>
     <Text fontSize='xl'>{children}</Text>
   </VStack>
 )

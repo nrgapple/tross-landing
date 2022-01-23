@@ -85,9 +85,7 @@ export const Contact = () => {
                     isInvalid={form.errors.name && form.touched.name}>
                     <FormLabel htmlFor='name'>Name/ Company</FormLabel>
                     <Input {...field} id='name' placeholder='John' />
-                    <FormErrorMessage pos='absolute'>
-                      {form.errors.name}
-                    </FormErrorMessage>
+                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
@@ -101,9 +99,7 @@ export const Contact = () => {
                       id='email'
                       placeholder='john@example.com'
                     />
-                    <FormErrorMessage pos='absolute'>
-                      {form.errors.email}
-                    </FormErrorMessage>
+                    <FormErrorMessage>{form.errors.email}</FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
@@ -118,9 +114,7 @@ export const Contact = () => {
                     id='msg'
                     placeholder='How can we help you?'
                   />
-                  <FormErrorMessage pos='absolute'>
-                    {form.errors.msg}
-                  </FormErrorMessage>
+                  <FormErrorMessage>{form.errors.msg}</FormErrorMessage>
                 </FormControl>
               )}
             </Field>
