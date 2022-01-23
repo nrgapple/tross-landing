@@ -70,5 +70,5 @@ const CarouselText = ({
 }
 
 TeamBlock.defaultProps = {
-  title: 'Removing Inefficiencies in the Tech Space',
+  title: 'Focus on your Business, Let us Handle your Tech',
 }
