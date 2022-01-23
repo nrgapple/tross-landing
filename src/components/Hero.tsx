@@ -8,7 +8,7 @@ export const Hero = () => (
         as='h1'
         fontSize={{ base: '5xl', lg: '8xl' }}
         fontWeight='extrabold'>
-        Build Maintainable Apps{' '}
+        Your Personal{' '}
         <Text
           as={'span'}
           position='relative'
@@ -22,15 +22,13 @@ export const Hero = () => (
             bg: 'brand.100',
             zIndex: -1,
           }}>
-          Now
+          Tech
         </Text>
-        , Not Tomorrow
+        Team
       </Heading>
       <Text fontSize='lg' color={'gray.600'}>
-        Our goal is to work on removing the inefficiencies within the tech
-        space. Similar to how websites progressed into a point where they can
-        quickly be launched and hosted, with modern technical stacks, we see
-        web-apps moving in that direction.
+        Our goal is to remove the necessity for businesses to have large,
+        expensive tech teams for building and maintaining their applications.
       </Text>
       <Link href={'/#contact'} passHref>
         <Button

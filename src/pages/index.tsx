@@ -7,7 +7,7 @@ import { Portfolio } from '../components/Portfolio'
 import { StackStuff } from '../components/StackStuff'
 import { Hero } from '../components/Hero'
 import { ContactSection } from '../components/ContactSection'
-import { useRouter } from 'next/router'
+import { Service } from '../components/Service'
 
 const Index = () => {
   return (
@@ -22,6 +22,9 @@ const Index = () => {
         </section>
         <section>
           <TeamBlock />
+        </section>
+        <section>
+          <Service />
         </section>
         <section>
           <Portfolio />

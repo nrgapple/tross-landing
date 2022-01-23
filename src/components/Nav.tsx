@@ -1,6 +1,7 @@
-import { Flex, Heading, HStack, Text, keyframes } from '@chakra-ui/react'
+import { Flex, Heading, HStack, Text, keyframes, Link } from '@chakra-ui/react'
 import theme from '../theme'
 import { TrossLogo } from './TrossLogo'
+import NextLink from 'next/link'
 
 export const Nav = () => {
   const color1 = theme.colors.brand[600]
@@ -23,7 +24,8 @@ export const Nav = () => {
         h='auto'
         p='2'
         align='center'
-        justify='space-between'
+        justify='flex-start'
+        spacing={10}
         w='full'>
         <HStack>
           <TrossLogo
@@ -51,6 +53,9 @@ export const Nav = () => {
             </Text>
           </Heading>
         </HStack>
+        <NextLink href={'/about'} passHref>
+          <Link>About</Link>
+        </NextLink>
       </HStack>
     </Flex>
   )
