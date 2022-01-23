@@ -3,8 +3,8 @@ import theme from '../theme'
 import { TrossLogo } from './TrossLogo'
 
 export const Nav = () => {
-  const color1 = theme.colors.brand[600]
-  const color2 = theme.colors.brand[100]
+  const color1 = theme.colors.black
+  const color2 = theme.colors.black
 
   const logoColor = keyframes`
     0%, 100%{
@@ -29,13 +29,14 @@ export const Nav = () => {
           <TrossLogo
             color={color1}
             animation={`${logoColor} infinite 5s linear`}
-            w={{ base: '70px', sm: '100px' }}
-            h={{ base: '70px', sm: '100px' }}
+            w={'60px'}
+            h={'60px'}
             viewBox='0 0 500 500'
           />
-          <Heading color='brand.600'>
+          <Heading>
             <Text
               as={'span'}
+              fontSize={'3xl'}
               position={'relative'}
               _after={{
                 content: "''",

@@ -8,7 +8,7 @@ export const Hero = () => (
         as='h1'
         fontSize={{ base: '5xl', lg: '8xl' }}
         fontWeight='extrabold'>
-        Build Maintainable Apps{' '}
+        Apps{' '}
         <Text
           as={'span'}
           position='relative'

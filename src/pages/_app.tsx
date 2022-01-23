@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <DefaultSeo
-        title='Tross'
+        title='Tross | Product Development'
         description='Apps Built Today'
         openGraph={{
           site_name: 'Tross',
@@ -18,6 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           title: 'Tross - Pluggable Engineers',
           description: 'Apps Built Today',
         }}
+      />
+      <link rel='preconnect' href='https://fonts.googleapis.com' />
+      <link rel='preconnect' href='https://fonts.gstatic.com' />
+      <link
+        href='https://fonts.googleapis.com/css2?family=Passion+One&display=swap'
+        rel='stylesheet'
       />
       <Component {...pageProps} />
     </ChakraProvider>

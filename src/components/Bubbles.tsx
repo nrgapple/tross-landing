@@ -48,7 +48,7 @@ export default function WithSpeechBubbles() {
           </ListItem>
           <ListItem fontSize='lg'>
             <Text fontWeight='bold' as='span' color='green.400'>
-              {'<'}5 months
+              {'<'}4 months
             </Text>{' '}
             to Production
           </ListItem>

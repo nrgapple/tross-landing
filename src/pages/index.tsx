@@ -8,6 +8,8 @@ import { StackStuff } from '../components/StackStuff'
 import { Hero } from '../components/Hero'
 import { ContactSection } from '../components/ContactSection'
 import { useRouter } from 'next/router'
+import { Text, VStack } from '@chakra-ui/react'
+import { Service } from '../components/Service'
 
 const Index = () => {
   return (
@@ -24,14 +26,22 @@ const Index = () => {
           <TeamBlock />
         </section>
         <section>
+          <Service />
+        </section>
+        <section>
           <Portfolio />
         </section>
         <section id='contact'>
           <ContactSection />
         </section>
         <Footer>
-          Copyright © {new Date().getFullYear()} Tross, LLC. All rights
-          reserved.
+          <VStack>
+            <Text>+1 (732) 814-3113</Text>
+            <Text>
+              Copyright © {new Date().getFullYear()} Tross, LLC. All rights
+              reserved.
+            </Text>
+          </VStack>
         </Footer>
       </Main>
     </Container>
