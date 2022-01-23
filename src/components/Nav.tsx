@@ -3,8 +3,8 @@ import theme from '../theme'
 import { TrossLogo } from './TrossLogo'
 
 export const Nav = () => {
-  const color1 = theme.colors.black
-  const color2 = theme.colors.black
+  const color1 = theme.colors.brand[600]
+  const color2 = theme.colors.brand[100]
 
   const logoColor = keyframes`
     0%, 100%{
@@ -36,7 +36,7 @@ export const Nav = () => {
           <Heading>
             <Text
               as={'span'}
-              fontSize={'3xl'}
+              fontSize={'xl'}
               position={'relative'}
               _after={{
                 content: "''",
