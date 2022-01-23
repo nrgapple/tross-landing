@@ -8,7 +8,7 @@ export const Hero = () => (
         as='h1'
         fontSize={{ base: '5xl', lg: '8xl' }}
         fontWeight='extrabold'>
-        Your Personal{' '}
+        Apps{' '}
         <Text
           as={'span'}
           position='relative'
@@ -22,9 +22,9 @@ export const Hero = () => (
             bg: 'brand.100',
             zIndex: -1,
           }}>
-          Tech
+          Now
         </Text>
-        Team
+        , Not Tomorrow
       </Heading>
       <Text fontSize='lg' color={'gray.600'}>
         Our goal is to remove the necessity for businesses to have large,

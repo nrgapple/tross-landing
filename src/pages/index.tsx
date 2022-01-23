@@ -18,13 +18,13 @@ const Index = () => {
           <Hero />
         </section>
         <section>
+          <Service />
+        </section>
+        <section>
           <StackStuff />
         </section>
         <section>
           <TeamBlock />
-        </section>
-        <section>
-          <Service />
         </section>
         <section>
           <Portfolio />

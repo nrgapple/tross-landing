@@ -136,5 +136,5 @@ export const StackStuff = ({ subheading }: { subheading?: string }) => {
 }
 
 StackStuff.defaultProps = {
-  subheading: 'A Stack for Fail Fast Oriented Start Ups',
+  subheading: 'One simple stack for all types of applications',
 }
