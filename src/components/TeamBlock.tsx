@@ -14,6 +14,13 @@ export const TeamBlock = ({ title }: { title: string }) => {
       <Heading pt='2rem' fontSize={{ base: '3xl', md: '4xl' }}>
         {title}
       </Heading>
+      <Text color='gray.800'>
+        It can take companies years and a large chunk of resources to put
+        together a qualified team of developers to get a functional MVP up. We
+        put up high quality MVPs in a short amount of time and for a fraction of
+        the price. Any issues can be resolved via our 24/7 support team and if
+        you'd want additional features added we're just one request away.
+      </Text>
       <Box pt={9}>
         <Ticker speed={4}>
           {({ index }) => (

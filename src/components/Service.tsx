@@ -12,7 +12,7 @@ export const Service = () => {
         />
         <Card
           title='24/7 Bug Support'
-          subtitle='No longer does your company need to have engineers on support to fix bug when they show up. Our 24/7 support will handle that for you'
+          subtitle='No longer does your company need to have engineers on support to fix bugs when they show up. Our 24/7 support will handle that for you'
         />
         <Card
           title=' Unlimited Feature Requests'

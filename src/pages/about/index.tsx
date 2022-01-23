@@ -12,7 +12,7 @@ export default function About() {
         </section>
         <section>
           <Heading>About Us</Heading>
-          <Text>
+          <Text textAlign={'start'} p='10'>
             Tross was founded by a team of Software Engineers who noticed large
             inefficiencies in the tech world. One of the things we discovered is
             how many tools there are out there for building applications.

@@ -8,8 +8,8 @@ export const Portfolio = () => {
         <Heading fontSize={{ base: '3xl', md: '4xl' }}>
           Trusted Partners
         </Heading>
-        <Text fontSize='lg' color='gray.600' pb='10'>
-          Referican is a trusted partner
+        <Text fontSize='lg' color='gray.600' pt='10'>
+          Referican
         </Text>
         <Box
           as='a'
