@@ -14,7 +14,7 @@ export const TeamBlock = ({ title }: { title: string }) => {
       <Heading pt='2rem' fontSize={{ base: '3xl', md: '4xl' }}>
         {title}
       </Heading>
-      <Text color='gray.800'>
+      <Text p='4' color='gray.800'>
         It can take companies years and a large chunk of resources to put
         together a qualified team of developers to get a functional MVP up. We
         put up high quality MVPs in a short amount of time and for a fraction of
