@@ -4,7 +4,7 @@ import { Card } from './Card'
 export const Service = () => {
   return (
     <Flex w='full' justify='center'>
-      <VStack>
+      <VStack maxW='60rem' px='1rem'>
         <Heading>Our Service</Heading>
         <Wrap pt='5' spacing={'10'} justify={'center'}>
           <Card
