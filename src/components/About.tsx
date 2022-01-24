@@ -13,7 +13,7 @@ export const AboutSection = () => {
     <Flex w='full' justify='center'>
       <VStack maxW='60rem' px='1rem'>
         <Heading>About Us</Heading>
-        <HStack>
+        <HStack flexDir={{ base: 'column', md: 'row' }}>
           <Text textAlign={'start'} p='10'>
             Tross was founded by a team of Software Engineers who noticed large
             inefficiencies in the tech world. One of the things we discovered is
@@ -21,7 +21,7 @@ export const AboutSection = () => {
           </Text>
           <Image w='300px' src='images/options.svg' />
         </HStack>
-        <HStack>
+        <HStack flexDir={{ base: 'column-reverse', md: 'row' }}>
           <Image w='300px' src='images/factory.svg' />
 
           <Text textAlign={'start'} p='10'>
@@ -37,7 +37,7 @@ export const AboutSection = () => {
             build.
           </Text>
         </HStack>
-        <HStack>
+        <HStack flexDir={{ base: 'column', md: 'row' }}>
           <Text textAlign={'start'} p='10'>
             Our secret sauce is <strong>standardization</strong>. Our qualified
             team has put together a tech stack that we see as the holy grail. We
