@@ -27,32 +27,37 @@ export const Nav = () => {
         justify='flex-start'
         spacing={10}
         w='full'>
-        <HStack>
-          <TrossLogo
-            color={color1}
-            animation={`${logoColor} infinite 5s linear`}
-            w={{ base: '70px', sm: '100px' }}
-            h={{ base: '70px', sm: '100px' }}
-            viewBox='0 0 500 500'
-          />
-          <Heading color='brand.600'>
-            <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: '40%',
-                position: 'absolute',
-                bottom: 1,
-                left: 0,
-                bg: 'brand.100',
-                zIndex: -1,
-              }}>
-              Tross
-            </Text>
-          </Heading>
-        </HStack>
+        <NextLink href='/' passHref>
+          <Link _hover={{ textDecoration: 'none' }}>
+            <HStack cursor='pointer'>
+              <TrossLogo
+                color={color1}
+                animation={`${logoColor} infinite 5s linear`}
+                w={{ base: '70px', sm: '100px' }}
+                h={{ base: '70px', sm: '100px' }}
+                viewBox='0 0 500 500'
+              />
+              <Heading color='brand.600'>
+                <Text
+                  as={'span'}
+                  position={'relative'}
+                  _after={{
+                    content: "''",
+                    width: 'full',
+                    height: '40%',
+                    position: 'absolute',
+                    bottom: 1,
+                    left: 0,
+                    bg: 'brand.100',
+                    zIndex: -1,
+                  }}>
+                  Tross
+                </Text>
+              </Heading>
+            </HStack>
+          </Link>
+        </NextLink>
+
         <NextLink href={'/about'} passHref>
           <Link>About</Link>
         </NextLink>
