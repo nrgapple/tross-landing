@@ -10,6 +10,7 @@ import {
   HStack,
   keyframes,
 } from '@chakra-ui/react'
+import { Section } from './Section'
 
 /**
  * Thanks to https://worldvectorlogo.com/ for the svg logos.
@@ -31,13 +32,13 @@ function StackWrapper({
       alignSelf={{ base: 'center', lg: 'flex-start' }}
       borderColor={useColorModeValue('gray.200', 'gray.500')}
       borderRadius={'xl'}>
-      <Box py={4} px={12}>
+      <Box py={4} px={{ base: 5, md: 12 }}>
         <Text fontWeight='500' fontSize='2xl'>
           {title}
         </Text>
       </Box>
       <HStack w='full' bg='gray.100' py={4} borderBottomRadius={'xl'}>
-        <HStack w='full' spacing={3} textAlign='start' px={12}>
+        <HStack w='full' spacing={3} textAlign='start' px={{ base: 5, md: 12 }}>
           {children}
         </HStack>
       </HStack>
@@ -54,8 +55,8 @@ const StackItem = ({
 }) => (
   <VStack w='full'>
     <Flex
-      w={16}
-      h={16}
+      w={{ base: 10, md: 16 }}
+      h={{ base: 10, md: 16 }}
       align={'center'}
       justify={'center'}
       color={'white'}
@@ -64,7 +65,7 @@ const StackItem = ({
       mb={1}>
       {icon}
     </Flex>
-    <Text fontSize='xl'>{children}</Text>
+    <Text fontSize={{ base: 'md', md: 'xl' }}>{children}</Text>
   </VStack>
 )
 
@@ -83,55 +84,53 @@ const engineMove = keyframes`
 
 export const StackStuff = ({ subheading }: { subheading?: string }) => {
   return (
-    <Flex justify='center' w='full'>
-      <Box py={12} maxW='60rem' px='1rem' w='full'>
-        <VStack spacing={2} textAlign='center'>
-          <HStack>
-            <Heading as='h1' fontSize={{ base: '3xl', md: '4xl' }}>
-              The Tross® Engine
-            </Heading>
-            <Image
-              animation={`${engineMove} infinite .3s ease`}
-              h='50px'
-              src='/images/car-engine.png'
-            />
-          </HStack>
-          <Text fontSize='lg' color={'gray.600'}>
-            {subheading}
-          </Text>
-        </VStack>
-        <VStack
-          w='full'
-          direction={{ base: 'column', md: 'row' }}
-          textAlign='center'
-          justify='center'
-          spacing={{ base: 4, lg: 10 }}
-          py={10}>
-          <StackWrapper title='SEO Optimized Frontend'>
-            <StackItem icon={<Image src='/images/next-js.svg' />}>
-              NextJs
-            </StackItem>
-            <StackItem icon={<Image src='/images/graphql.svg' />}>
-              Graphql
-            </StackItem>
-            <StackItem icon={<Image src='/images/next-auth.png' />}>
-              NextAuth
-            </StackItem>
-          </StackWrapper>
-          <StackWrapper title='Lightweight Scalable Backend'>
-            <StackItem icon={<Image src='/images/aws-lambda-1.svg' />}>
-              NextApi
-            </StackItem>
-            <StackItem icon={<Image src='/images/prisma-3.svg' />}>
-              Prisma
-            </StackItem>
-            <StackItem icon={<Image src='/images/postgresql.svg' />}>
-              PostgreSQL
-            </StackItem>
-          </StackWrapper>
-        </VStack>
-      </Box>
-    </Flex>
+    <Section>
+      <VStack spacing={2} textAlign='center'>
+        <HStack>
+          <Heading as='h1' fontSize={{ base: '3xl', md: '4xl' }}>
+            The Tross® Engine
+          </Heading>
+          <Image
+            animation={`${engineMove} infinite .3s ease`}
+            h='50px'
+            src='/images/car-engine.png'
+          />
+        </HStack>
+        <Text fontSize='lg' color={'gray.600'}>
+          {subheading}
+        </Text>
+      </VStack>
+      <VStack
+        w='full'
+        direction={{ base: 'column', md: 'row' }}
+        textAlign='center'
+        justify='center'
+        spacing={{ base: 4, lg: 10 }}
+        py={10}>
+        <StackWrapper title='SEO Optimized Frontend'>
+          <StackItem icon={<Image src='/images/next-js.svg' />}>
+            NextJs
+          </StackItem>
+          <StackItem icon={<Image src='/images/graphql.svg' />}>
+            Graphql
+          </StackItem>
+          <StackItem icon={<Image src='/images/next-auth.png' />}>
+            NextAuth
+          </StackItem>
+        </StackWrapper>
+        <StackWrapper title='Lightweight Scalable Backend'>
+          <StackItem icon={<Image src='/images/aws-lambda-1.svg' />}>
+            NextApi
+          </StackItem>
+          <StackItem icon={<Image src='/images/prisma-3.svg' />}>
+            Prisma
+          </StackItem>
+          <StackItem icon={<Image src='/images/postgresql.svg' />}>
+            PostgreSQL
+          </StackItem>
+        </StackWrapper>
+      </VStack>
+    </Section>
   )
 }
 
