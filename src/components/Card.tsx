@@ -7,7 +7,8 @@ interface CardProps {
 export const Card = ({ title, subtitle }: CardProps) => {
   return (
     <VStack
-      w='250px'
+      maxW='250px'
+      w='full'
       border={'1px'}
       borderColor={'gray.500'}
       rounded={'md'}
