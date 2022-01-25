@@ -8,8 +8,23 @@ import { StackStuff } from '../components/StackStuff'
 import { Hero } from '../components/Hero'
 import { ContactSection } from '../components/ContactSection'
 import { Service } from '../components/Service'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { pageview } from '../utils/gs'
 
 const Index = () => {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <Container>
       <Main>
