@@ -26,7 +26,8 @@ export const Nav = () => {
         align='center'
         justify='flex-start'
         spacing={10}
-        w='full'>
+        w='full'
+        textAlign='center'>
         <NextLink href='/' passHref>
           <Link _hover={{ textDecoration: 'none' }}>
             <HStack cursor='pointer'>
@@ -60,6 +61,9 @@ export const Nav = () => {
 
         <NextLink href={'/about'} passHref>
           <Link>About</Link>
+        </NextLink>
+        <NextLink href={'/#contact'} passHref>
+          <Link>Contact</Link>
         </NextLink>
       </HStack>
     </Flex>
